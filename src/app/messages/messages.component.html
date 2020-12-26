@@ -1,0 +1,27 @@
+<div id="messages">
+    <button class="btn btn-primary" (click)="onSendMessage()">Send Error(click this button and test button)</button>
+    <h2>Received messages <span class="badge badge-pill badge-danger">{{count}}</span></h2>
+    <ol>
+        <!-- we will use Angular binding to populate list of messages -->
+        <li class="message" *ngFor="let message of receivedMessages">{{message}}</li>
+      <li class="message" *ngFor="let message of data">{{message.name}} - {{message.status}}</li>
+
+    </ol>
+  <button type="button" (click)="modal.show()">test</button>
+  <app-modal #modal>
+    <div class="app-modal-header">
+      header
+    </div>
+    <div class="app-modal-body">
+      <ol>
+        <!-- we will use Angular binding to populate list of messages -->
+        <li class="message" *ngFor="let error of receivedErrors">{{error}}</li>
+
+      </ol>
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modal.hide()">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </app-modal>
+</div>
